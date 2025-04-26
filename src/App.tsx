@@ -9,6 +9,7 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { MetaTags } from './components/layout/meta-tags';
 
 // Create a client for react-query
 const queryClient = new QueryClient({
@@ -25,6 +26,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner position="top-right" />
+      <MetaTags />
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
           <Routes>
