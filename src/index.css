@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+@font-face {
+  font-family: 'AngelicBonquesSans';
+  src: url('/fonts/angelic-bonques-sans.woff2') format('woff2'),
+       url('/fonts/angelic-bonques-sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AngelicBonquesScript';
+  src: url('/fonts/angelic-bonques-script.woff2') format('woff2'),
+       url('/fonts/angelic-bonques-script.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 180 20% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 30 30% 85%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 25 25% 55%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+    
+    --subtle-shadow: rgba(37, 55, 55, 0.05);
+    --premium-shadow: rgba(37, 55, 55, 0.1);
+    --hover-overlay: rgba(37, 55, 55, 0.03);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 180 20% 20%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 30 30% 85%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 25 25% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body tracking-body text-base leading-relaxed uppercase;
+    background-image: url('/assets/henna-pattern.svg');
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-heading leading-heading uppercase;
+  }
+  
+  /* Improved link hover animation */
+  .text-link {
+    @apply relative inline-block transition-colors duration-200 uppercase;
+  }
+  
+  .text-link::after {
+    content: '';
+    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300;
+  }
+  
+  .text-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+  
+  /* Enhanced hover scale animation */
+  .hover-scale {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Improved readability for text content */
+  .content-wrapper {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Better spacing for sections */
+  section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Modern card styling */
+  .card {
+    @apply bg-card rounded-lg p-6 transition-all duration-300 hover:shadow-lg backdrop-blur-sm;
+    border: 1px solid rgba(245, 245, 245, 0.1);
+  }
+
+  /* Modern button styling */
+  .btn {
+    @apply px-6 py-3 rounded-lg uppercase tracking-wider transition-all duration-300 
+           bg-primary text-background hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Modern input styling */
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-primary/20 bg-background/50 backdrop-blur-sm
+           text-primary placeholder-primary/50
+           focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50
+           transition-all duration-300;
+  }
+
+  /* Glass effect for containers */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-primary/10;
+  }
+
+  /* Overlay for sections */
+  .section-overlay {
+    @apply relative;
+  }
+
+  .section-overlay::before {
+    content: '';
+    @apply absolute inset-0 bg-background/90 -z-10;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body tracking-body text-base leading-relaxed uppercase;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-heading leading-heading uppercase;
+  }
+  
+  /* Improved link hover animation */
+  .text-link {
+    @apply relative inline-block transition-colors duration-200 uppercase;
+  }
+  
+  .text-link::after {
+    content: '';
+    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300;
+  }
+  
+  .text-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+  
+  /* Enhanced hover scale animation */
+  .hover-scale {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Improved readability for text content */
+  .content-wrapper {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Better spacing for sections */
+  section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+}
