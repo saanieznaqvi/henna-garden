@@ -14,7 +14,7 @@ export const MetaTags = () => {
       <meta property="og:url" content="https://saanieshennagarden.vercel.app/" />
       <meta property="og:title" content="Saanie's Henna Garden - Professional Henna Artistry" />
       <meta property="og:description" content="Professional henna artistry services for weddings, parties, and special occasions. Book your appointment today!" />
-      <meta property="og:image" content="https://saanieshennagarden.vercel.app/assets/logo.png" />
+      <meta property="og:image" content="https://saanieshennagarden.vercel.app/assets/logo2.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
@@ -23,7 +23,7 @@ export const MetaTags = () => {
       <meta property="twitter:url" content="https://saanieshennagarden.vercel.app/" />
       <meta property="twitter:title" content="Saanie's Henna Garden - Professional Henna Artistry" />
       <meta property="twitter:description" content="Professional henna artistry services for weddings, parties, and special occasions. Book your appointment today!" />
-      <meta property="twitter:image" content="https://saanieshennagarden.vercel.app/assets/logo.png" />
+      <meta property="twitter:image" content="https://saanieshennagarden.vercel.app/assets/logo2.png" />
     </Helmet>
   );
 }; 
